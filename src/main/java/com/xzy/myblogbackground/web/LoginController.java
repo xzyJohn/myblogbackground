@@ -14,12 +14,9 @@ public class LoginController {
     @Resource
     private LoginService loginService;
 
-    @PostMapping
-    public String login(@Validated @RequestBody UserInfo userInfo){
-        int result=loginService.login(userInfo.getUserName(),userInfo.getPassword());
-        if(result!=1){
-            return "error";
-        }
-        return "success";
+    @GetMapping
+    public Long login(String userName,String password){
+        Long result=loginService.login(userName,password);
+        return result;
     }
 }

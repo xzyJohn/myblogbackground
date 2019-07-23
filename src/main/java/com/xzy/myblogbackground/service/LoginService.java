@@ -1,5 +1,5 @@
 package com.xzy.myblogbackground.service;
 
 public interface LoginService {
-    int login(String userName, String password);
+    Long login(String userName, String password);
 }

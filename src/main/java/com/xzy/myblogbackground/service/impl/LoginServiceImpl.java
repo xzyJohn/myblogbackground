@@ -13,11 +13,11 @@ public class LoginServiceImpl implements LoginService {
     @Resource
     private LoginMapper loginMapper;
     @Override
-    public int login(String userName, String password) {
+    public Long login(String userName, String password) {
         Long id=loginMapper.login(userName,password);
         if(id==null){
-            return 0;
+            return 0L;
         }
-        return 1;
+        return id;
     }
 }
